@@ -49,10 +49,10 @@ So that's what we did with the app.
 
 Group member：
 
- Name           CQU_Number
+ Name                  CQU_Number
  
- Xiaonan Peng    20171627
+ Xiaonan Peng          20171627
  
- Shu Mo          20171592
+ Shu Mo                20171592
 
     
