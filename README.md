@@ -16,10 +16,9 @@ radio broadcast, memo alarm reminder.
 
 Function 1:
 
-  Login-Function:
-  
-  Login function is a simple local login, users can register new users, change the password, data is saved in SQLite.A 
-  third party login could not be made due to time constraints.
+    Login-Functio:
+    
+    Login function is a simple local login, users can register new users, change the password, data is saved in SQLite.A third party login could not be made due to time constraints.
   
 Function 2:
 
