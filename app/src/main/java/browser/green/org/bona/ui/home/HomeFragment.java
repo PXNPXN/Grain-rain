@@ -44,7 +44,7 @@ import pl.pzienowicz.autoscrollviewpager.AutoScrollViewPager;
 
 
 public class HomeFragment extends Fragment {
-    public ImageButton ib_add,ib_pause;
+    public ImageButton ib_add,ib_pause,ib_del;
     public TextView textView;
     private MyService.MyBinder myBinder;
     public ArrayList<View> viewContainer;
@@ -75,36 +75,6 @@ public class HomeFragment extends Fragment {
         viewContainer  = new ArrayList<View>();// 将要分页显示的View装入数组中
 
 
-        ib_pause=root.findViewById(R.id.ib_pauseAndReplay);
-        ib_add=root.findViewById(R.id.ib_add);
-        ib_add.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View view) {
-                dialogueBox();
-            }
-        });
-        ib_pause.setOnClickListener( new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                if(myBinder.is_playing()){
-                    ib_pause.setBackgroundResource(R.drawable.pause);
-                    myBinder.pause_music();
-                }
-                else{
-                    if(i==0){
-                        myBinder.play_music(R.raw.sea);
-                        ib_pause.setBackgroundResource(R.drawable.replay);
-                        myBinder.set_loop(true);
-                    }
-                    else{
-                        ib_pause.setBackgroundResource(R.drawable.replay);
-                        myBinder.start();
-                    }
-                    i++;
-                }
-            }
-        });
         //绑定服务
         Intent intent = new Intent(getContext(),MyService.class);
         Objects.requireNonNull(getActivity()).getApplicationContext().bindService(intent,conn, Context.BIND_AUTO_CREATE);
@@ -179,6 +149,50 @@ public class HomeFragment extends Fragment {
                 }
             }
 
+        });
+
+        ib_del=root.findViewById(R.id.ib_del);
+        ib_pause=root.findViewById(R.id.ib_pauseAndReplay);
+        ib_add=root.findViewById(R.id.ib_add);
+
+        ib_del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position=viewContainer.size();
+                if(position>4){
+                    viewContainer.remove(position-1);
+                    adapter.setViews(viewContainer);
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        });
+        ib_add.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View view) {
+                dialogueBox();
+            }
+        });
+        ib_pause.setOnClickListener( new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                if(myBinder.is_playing()){
+                    ib_pause.setBackgroundResource(R.drawable.pause);
+                    myBinder.pause_music();
+                }
+                else{
+                    if(i==0){
+                        myBinder.play_music(R.raw.sea);
+                        ib_pause.setBackgroundResource(R.drawable.replay);
+                        myBinder.set_loop(true);
+                    }
+                    else{
+                        ib_pause.setBackgroundResource(R.drawable.replay);
+                        myBinder.start();
+                    }
+                    i++;
+                }
+            }
         });
         return root;
     }

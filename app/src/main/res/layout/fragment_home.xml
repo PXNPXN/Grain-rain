@@ -47,6 +47,15 @@
         android:background="@drawable/add" />
 
     <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/ib_del"
+        android:layout_toRightOf="@+id/tv_motto"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/delete" />
+
+    <ImageButton
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/ib_pauseAndReplay"
