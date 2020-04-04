@@ -49,10 +49,9 @@ So that's what we did with the app.
 
 Group member：
 
- Name                  CQU_Number
  
- Xiaonan Peng          20171627
+ Name: Xiaonan Peng   CQU_Number: 20171627
  
- Shu Mo                20171592
+ Name: Shu Mo   CQU_Number: 20171592
 
     
