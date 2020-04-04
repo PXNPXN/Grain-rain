@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    android:orientation="vertical">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_main"
@@ -15,5 +16,42 @@
         tools:layout_editor_absoluteY="1dp" >
     </androidx.viewpager.widget.ViewPager>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_greet"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:textSize="28sp"
+        android:textColor="@color/colorWhite"
+        android:text="早上好" />
 
-</LinearLayout>
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_motto"
+        android:layout_below="@+id/tv_greet"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorLightGray"
+        android:text="心怀大想法，享受小乐趣"/>
+
+    <ImageButton
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/ib_add"
+        android:layout_toRightOf="@+id/tv_motto"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="70dp"
+        android:background="@drawable/add" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/ib_pauseAndReplay"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/pause" />
+
+</RelativeLayout>

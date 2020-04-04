@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/iv_play_image"
+        android:layout_width="240dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="60dp"
+        android:layout_height="240dp"/>
+    <TextView
+        android:id="@+id/tv_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="状态"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/tv_program_index"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="当前播放："
+        android:layout_marginBottom="5dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <SeekBar
+            android:id="@+id/playback_progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/playback_current_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/playback_progress_bar"
+            android:layout_below="@id/playback_progress_bar"
+            android:text="进度" />
+
+        <TextView
+            android:id="@+id/playback_durations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/playback_progress_bar"
+            android:layout_below="@id/playback_progress_bar"
+            android:text="时长" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp">
+
+        <ImageButton
+            android:id="@+id/btn_pre"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:onClick="onClickPlayControl"
+            android:background="@drawable/shape_circle"
+            android:src="@android:drawable/ic_media_previous"
+            android:text="上一首" />
+
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/btn_rew"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:visibility="invisible"-->
+        <!--            android:onClick="onClickPlayControl"-->
+        <!--            android:src="@android:drawable/ic_media_rew"-->
+        <!--            android:text="后退" />-->
+
+        <ImageButton
+            android:id="@+id/btn_play"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/shape_circle"
+            android:onClick="onClickPlayControl"
+            android:layout_marginLeft="90dp"
+            android:visibility="invisible"
+            android:src="@android:drawable/ic_media_play"
+            android:text="播放" />
+
+        <ImageButton
+            android:id="@+id/btn_pause"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="90dp"
+            android:background="@drawable/shape_circle"
+            android:onClick="onClickPlayControl"
+            android:src="@android:drawable/ic_media_pause"
+            android:text="暂停" />
+
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/btn_ff"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:visibility="invisible"-->
+        <!--            android:onClick="onClickPlayControl"-->
+        <!--            android:src="@android:drawable/ic_media_ff"-->
+        <!--            android:text="快进" />-->
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/shape_circle"
+            android:onClick="onClickPlayControl"
+            android:layout_marginLeft="180dp"
+            android:src="@android:drawable/ic_media_next"
+            android:text="下一首" />
+    </RelativeLayout>
+
+</LinearLayout>

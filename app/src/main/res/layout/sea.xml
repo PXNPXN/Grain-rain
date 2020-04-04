@@ -5,32 +5,5 @@
     android:orientation="vertical"
     android:background="@drawable/bg_sea">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_greet"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
-        android:textSize="28sp"
-        android:text="下午好" />
-    <TextView
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_motto"
-        android:layout_below="@id/tv_greet"
-        android:layout_marginLeft="40dp"
-        android:textSize="16sp"
-        android:text="在阳光下生活，在大海里游泳，到野外畅饮新鲜空气"
-        />
-    <Button
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:id="@+id/btnPause"
-        android:gravity="center"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/pause1"
-        android:onClick="isPause"
-        />
 
 </RelativeLayout>
